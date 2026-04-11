@@ -114,6 +114,21 @@ export type {
     PluginFetchResponseMessage,
 } from "./types/events"
 
+// Macro Plugin
+export type {
+    MacroStage,
+    MacroControlMapping,
+    MacroControl,
+    MacroPluginDescriptor,
+    MacroPluginManifest,
+    MacroPluginModule,
+} from "./types/macro-plugin"
+export {
+    applyMacroControl,
+    interpolatePresets,
+    randomizeParams,
+} from "./types/macro-plugin"
+
 // Helpers (runtime values, not just types)
 export {
     noteToHz,

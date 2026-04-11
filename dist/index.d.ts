@@ -10,6 +10,8 @@ export type { EqBand, EqBandType, VocalEqSettings, VocalCompressorSettings, Voca
 export type { UniformType, ShaderUniform, ShaderDefinition, ShaderModule, } from "./types/shader";
 export type { CollaborationAccess, LicenseToken, LicenseGranted, LicenseDenied, LicenseCheckResult, LicenseChecker, } from "./types/licensing";
 export type { HostToPluginMessage, HostToPluginExtended, PluginToHostEvent, PluginInitMessage, PluginParamsUpdateMessage, PluginProcessMessage, PluginMidiMessage, PluginNoteOnMessage, PluginNoteOffMessage, PluginDisposeMessage, PluginReadyEvent, PluginAudioOutputEvent, PluginMidiOutputEvent, PluginErrorEvent, PluginFetchRequestEvent, PluginFetchResponseMessage, } from "./types/events";
+export type { MacroStage, MacroControlMapping, MacroControl, MacroPluginDescriptor, MacroPluginManifest, MacroPluginModule, } from "./types/macro-plugin";
+export { applyMacroControl, interpolatePresets, randomizeParams, } from "./types/macro-plugin";
 export { noteToHz, hzToNote, hzToNoteFractional, midiToName, nameToMidi, semitonesBetween, transpose, beatsToSeconds, secondsToBeats, gainToDb, dbToGain, clamp, lerp, } from "./helpers/note-utils";
 export type { NoteName } from "./helpers/note-utils";
 //# sourceMappingURL=index.d.ts.map
