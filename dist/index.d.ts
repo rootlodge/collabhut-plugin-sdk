@@ -1,7 +1,7 @@
 export type { PluginManifest, PluginType, PluginPricing, SemVer, PluginAuthor, PluginIconRef } from "./types/manifest";
 export type { PluginParam, RangeParam, BoolParam, ChoiceParam, ParamCurve, ParamValues } from "./types/parameters";
 export type { PluginContext, InstrumentContext } from "./types/context";
-export type { PluginUIDescriptor, UISection, UIControl, UIKnob, UISlider, UIToggle, UIDropdown, UIMeter, UILabel, UIXYPad, UISpacer, } from "./types/ui";
+export type { PluginUIDescriptor, UISection, UIControl, UIKnob, UISlider, UIToggle, UIDropdown, UIMeter, UILabel, UIXYPad, UISpacer, UIWaveform, UISpectrum, UIEnvelope, UISignalFlow, UISignalFlowStage, UIRadialGroup, UIToggleGrid, } from "./types/ui";
 export type { ShareablePreset, ShareableVocalPreset, } from "./types/preset";
 export type { AudioEffectIO, AudioEffectFactory, AudioEffectModule, } from "./types/audio-effect";
 export type { MidiEvent, MidiEventType, MidiNoteOnEvent, MidiNoteOffEvent, MidiControlChangeEvent, MidiPitchBendEvent, MidiAftertouchEvent, MidiPolyAftertouchEvent, MidiProgramChangeEvent, MidiEffectPlugin, MidiEffectFactory, MidiEffectModule, } from "./types/midi-effect";
