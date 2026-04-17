@@ -1,6 +1,6 @@
 {
     "name": "@collabhut/plugin-sdk",
-    "version": "0.4.0",
+    "version": "1.0.0",
     "description": "Type-safe SDK for building, publishing, and licensing CollabDAW plugins on CollabHut Marketplace",
     "license": "MIT",
     "type": "module",
