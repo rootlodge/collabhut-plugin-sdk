@@ -16,6 +16,13 @@ export type {
     UILabel,
     UIXYPad,
     UISpacer,
+    UIWaveform,
+    UISpectrum,
+    UIEnvelope,
+    UISignalFlow,
+    UISignalFlowStage,
+    UIRadialGroup,
+    UIToggleGrid,
 } from "./types/ui"
 
 // Presets

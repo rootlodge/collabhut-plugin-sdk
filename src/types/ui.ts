@@ -59,6 +59,12 @@ export type UIControl =
     | UILabel
     | UIXYPad
     | UISpacer
+    | UIWaveform
+    | UISpectrum
+    | UIEnvelope
+    | UISignalFlow
+    | UIRadialGroup
+    | UIToggleGrid
 
 /** Rotary knob control bound to a range parameter */
 export interface UIKnob {
@@ -130,4 +136,97 @@ export interface UISpacer {
     readonly type: "spacer"
     /** Width in pixels (horizontal layouts) or height (vertical layouts) */
     readonly size?: number
+}
+
+/** Real-time waveform display with optional gain tracking */
+export interface UIWaveform {
+    readonly type: "waveform"
+    /** Which signal to visualize */
+    readonly channel: "input" | "output" | "sidechain"
+    /** Canvas width in pixels (default 200) */
+    readonly width?: number
+    /** Canvas height in pixels (default 64) */
+    readonly height?: number
+    /** Hex colour for the waveform stroke */
+    readonly color?: string
+    /** Fill style: "none", "gradient", or "solid" (default "gradient") */
+    readonly fill?: "none" | "gradient" | "solid"
+}
+
+/** FFT spectrum analyzer display */
+export interface UISpectrum {
+    readonly type: "spectrum"
+    /** Which signal to analyze */
+    readonly channel: "input" | "output" | "sidechain"
+    /** Canvas width in pixels (default 200) */
+    readonly width?: number
+    /** Canvas height in pixels (default 80) */
+    readonly height?: number
+    /** Display mode (default "bars") */
+    readonly mode?: "bars" | "line" | "filled"
+    /** Hex colour for the spectrum */
+    readonly color?: string
+    /** FFT size: 256, 512, 1024, 2048, 4096 (default 2048) */
+    readonly fftSize?: 256 | 512 | 1024 | 2048 | 4096
+}
+
+/** ADSR envelope editor bound to attack/decay/sustain/release params */
+export interface UIEnvelope {
+    readonly type: "envelope"
+    /** Param ID for attack time */
+    readonly attackParamId: string
+    /** Param ID for decay time */
+    readonly decayParamId: string
+    /** Param ID for sustain level */
+    readonly sustainParamId: string
+    /** Param ID for release time */
+    readonly releaseParamId: string
+    /** Canvas width in pixels (default 200) */
+    readonly width?: number
+    /** Canvas height in pixels (default 80) */
+    readonly height?: number
+    /** Hex colour for the envelope curve */
+    readonly color?: string
+}
+
+/** Signal flow visualization (gain reduction, input/output levels) */
+export interface UISignalFlow {
+    readonly type: "signal-flow"
+    /** Stages in the processing chain to visualize */
+    readonly stages: readonly UISignalFlowStage[]
+    /** Orientation (default "horizontal") */
+    readonly orientation?: "horizontal" | "vertical"
+}
+
+/** Individual stage in a signal flow visualization */
+export interface UISignalFlowStage {
+    readonly label: string
+    /** Meter channel for this stage */
+    readonly channel: "input" | "output" | "gain-reduction"
+    /** Hex colour for this stage */
+    readonly color?: string
+}
+
+/** Group of radial knobs arranged in a circular layout */
+export interface UIRadialGroup {
+    readonly type: "radial-group"
+    /** Param IDs to display as radial controls */
+    readonly paramIds: readonly string[]
+    /** Diameter of the group in pixels (default 160) */
+    readonly diameter?: number
+    /** Hex colour for the arcs */
+    readonly color?: string
+}
+
+/** Grid of toggle buttons for multi-state selection (e.g., step sequencer) */
+export interface UIToggleGrid {
+    readonly type: "toggle-grid"
+    /** Param IDs mapped to each toggle cell */
+    readonly paramIds: readonly string[]
+    /** Number of columns in the grid */
+    readonly columns: number
+    /** Hex colour for active cells */
+    readonly activeColor?: string
+    /** Hex colour for inactive cells */
+    readonly inactiveColor?: string
 }
